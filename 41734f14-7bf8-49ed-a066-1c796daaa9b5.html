@@ -1,0 +1,148 @@
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>pyatv log</title>
+  <style type="text/css" media="screen">
+    .box_log {
+      margin: 3px;
+      padding: 2px;
+      border-color: #aaaaaa;
+      border-radius: 5px;
+      border-style: dotted;
+      background: #cccccc;
+    }
+    .box_log summary {
+      overflow: scroll;
+      white-space: wrap;
+    }
+    .box_log pre {
+      overflow-x: auto;
+    }
+  </style>
+
+  <script>
+    var content = [["2020-08-20 18:43:47", "DEBUG", " Knocking at port 3689 on 10.0.10.81", " Knocking at port 3689 on 10.0.10.81\n"], ["2020-08-20 18:43:47", "DEBUG", " Knocking at port 7000 on 10.0.10.81", " Knocking at port 7000 on 10.0.10.81\n"], ["2020-08-20 18:43:47", "DEBUG", " Knocking at port 49152 on 10.0.10.81", " Knocking at port 49152 on 10.0.10.81\n"], ["2020-08-20 18:43:47", "DEBUG", " Knocking at port 32498 on 10.0.10.81", " Knocking at port 32498 on 10.0.10.81\n"], ["2020-08-20 18:43:47", "DEBUG", " Cleaning up after UDNS request", " Cleaning up after UDNS request\n"], ["2020-08-20 18:43:47", "DEBUG", " Cleaning up after UDNS request", " Cleaning up after UDNS request\n"], ["2020-08-20 18:43:47", "DEBUG", " Cleaning up after UDNS request", " Cleaning up after UDNS request\n"], ["2020-08-20 18:43:47", "DEBUG", " Auto-discovered Vardagsrum (5) at 10.0.10.81:49152 (Protocol.MRP)", " Auto-discovered Vardagsrum (5) at 10.0.10.81:49152 (Protocol.MRP)\n"], ["2020-08-20 18:43:47", "DEBUG", " Auto-discovered Vardagsrum (5) at 10.0.10.81:7000 (Protocol.AirPlay)", " Auto-discovered Vardagsrum (5) at 10.0.10.81:7000 (Protocol.AirPlay)\n"], ["2020-08-20 18:43:47", "INFO", " Auto-discovered Vardagsrum (5) at 10.0.10.81", " Auto-discovered Vardagsrum (5) at 10.0.10.81\n"], ["2020-08-20 18:43:47", "DEBUG", " No AirPlay credentials loaded", " No AirPlay credentials loaded\n"], ["2020-08-20 18:43:47", "DEBUG", " Connection made to device", " Connection made to device\n"], ["2020-08-20 18:43:47", "INFO", " Configured keep-alive on <asyncio.TransportSocket fd=8, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('10.0.10.254', 52108), raddr=('10.0.10.81', 49152)> (Linux)", " Configured keep-alive on <asyncio.TransportSocket fd=8, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('10.0.10.254', 52108), raddr=('10.0.10.81', 49152)> (Linux)\n"], ["2020-08-20 18:43:47", "DEBUG", " 10.0.10.254:52108<->10.0.10.81:49152 Connection established", " 10.0.10.254:52108<->10.0.10.81:49152 Connection established\n"], ["2020-08-20 18:43:47", "DEBUG", " 10.0.10.254:52108<->10.0.10.81:49152 >> Send (Data=080f122465653265636265362d396534322d343737362d383930392d6564383333386466396564642000a20183010a2438376630303466372d633938322d343036392d383664612d373832386237356261646264120570796174761a066950686f6e6522063137423131312a12636f6d2e6170706c652e545652656d6f746532063334342e32383801404d480150016211636f6d2e6170706c652e54564d75736963680170017801880102a80101b00101)", " 10.0.10.254:52108<->10.0.10.81:49152 >> Send (Data=080f122465653265636265362d396534322d343737362d383930392d6564383333386466396564642000a20183010a2438376630303466372d633938322d343036392d383664612d373832386237356261646264120570796174761a066950686f6e6522063137423131312a12636f6d2e6170706c652e545652656d6f746532063334342e32383801404d480150016211636f6d2e6170706c652e54564d75736963680170017801880102a80101b00101)\n"], ["2020-08-20 18:43:47", "DEBUG", " 10.0.10.254:52108<->10.0.10.81:49152 >> Send: Protobuf: type: DEVICE_INFO_MESSAGE", " 10.0.10.254:52108<->10.0.10.81:49152 >> Send: Protobuf: type: DEVICE_INFO_MESSAGE\nidentifier: \"ee2ecbe6-9e42-4776-8909-ed8338df9edd\"\nerrorCode: NoError\n[deviceInfoMessage] {\n  uniqueIdentifier: \"87f004f7-c982-4069-86da-7828b75badbd\"\n  name: \"pyatv\"\n  localizedModelName: \"iPhone\"\n  systemBuildVersion: \"17B111\"\n  applicationBundleIdentifier: \"com.apple.TVRemote\"\n  applicationBundleVersion: \"344.28\"\n  protocolVersion: 1\n  lastSupportedMessageType: 77\n  supportsSystemPairing: true\n  allowsPairing: true\n  systemMediaApplication: \"com.apple.TVMusic\"\n  supportsACL: true\n  supportsSharedQueue: true\n  supportsExtendedMotion: true\n  sharedQueueVersion: 2\n  deviceClass: iPhone\n  logicalDeviceCount: 1\n}\n"]];
+    var level_checkboxes = [];
+
+    function createEntry(entry) {
+      var show_date = document.getElementById("show_date").checked;
+      var outer = document.createElement("div");
+      outer.className = "box_log";
+
+      var details = document.createElement("details");
+      outer.appendChild(details);
+
+      var summary = document.createElement("summary");
+      summary.innerText = (show_date ? entry[0] + " " : "") + entry[2];
+      details.appendChild(summary);
+
+      var desc = document.createElement("pre");
+      details.appendChild(desc);
+
+      details.addEventListener("toggle", event => {
+        if (details.open) {
+          desc.innerText = entry[3];
+
+        }
+      });
+
+      return outer;
+    }
+
+    function populate() {
+      include_filter = document.getElementById("include_filter").value;
+      exclude_filter = document.getElementById("exclude_filter").value;
+
+      entries = document.getElementById("entries")
+      entries.innerHTML = "";
+
+      active_levels = new Set();
+      for (const checkbox of level_checkboxes) {
+        if (checkbox.checked) {
+          active_levels.add(checkbox.value);
+        }
+      }
+
+      include_regexp = new RegExp(include_filter, "i");
+      exclude_regexp = new RegExp(exclude_filter, "i");
+      for (const entry of content) {
+        if (exclude_filter && exclude_regexp.test(entry[3])) {
+          continue;
+        }
+
+        if ((include_filter == null || include_regexp.test(entry[3])) &&
+            active_levels.has(entry[1])) {
+          entries.appendChild(createEntry(entry));
+        }
+      }
+    }
+
+    function loadData() {
+      var log_levels = new Set();
+
+      for (const entry of content) {
+        log_levels.add(entry[1]);
+      }
+
+      for (const level of log_levels) {
+        var outer = document.createElement("div");
+        outer.style = "display: inline";
+
+        var filter_box = document.createElement("input");
+        filter_box.type = "checkbox";
+        filter_box.value = level;
+        filter_box.id = "LEVEL_" + level;
+        filter_box.value = level;
+        filter_box.checked = true;
+        filter_box.addEventListener('change', (event) => {
+          populate();
+        });
+
+        outer.appendChild(filter_box);
+        level_checkboxes.push(filter_box);
+
+        var label = document.createElement("label");
+        label.innerText = level;
+        label.for = "LEVEL_" + level;
+        outer.appendChild(label);
+
+        document.getElementById("filters").appendChild(outer);
+      }
+
+      populate();
+    }
+
+    // onload does not seem to work nicely with htmlpreview, so this is a workaround
+    var checkExist = setInterval(function() {
+      if (document.getElementById("entries")) {
+        loadData();
+        clearInterval(checkExist);
+      }
+    }, 100);
+  </script>
+
+</head>
+<body>
+  <h1>pyatv log2html</h1>
+  <div>
+    Generated at 2021-02-26 05:45:51.019689<br />
+    Command: /opt/hostedtoolcache/Python/3.9.1/x64/bin/atvlog --output 41734f14-7bf8-49ed-a066-1c796daaa9b5.html --format markdown body
+  </div>
+  <div id="filters" style="display: inline">
+    <div>
+      <label for="include_filter">Include</label>
+      <input type="text" id="include_filter" onkeyup="populate()"
+             placeholder="Include regexp..." />
+    </div>
+    <div>
+      <label for="exclude_filter">Exclude</label>
+      <input type="text" id="exclude_filter" onkeyup="populate()"
+             placeholder="Exclude regexp..." />
+    </div>
+    <div>
+      <input type="checkbox" id="show_date" onclick="populate()" checked />
+      <label for="show_date">Show date</label>
+    </div>
+  </div>
+  <div id="entries" />
+</body>
