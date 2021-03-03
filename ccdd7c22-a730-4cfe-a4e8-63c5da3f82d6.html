@@ -1,0 +1,148 @@
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>pyatv log</title>
+  <style type="text/css" media="screen">
+    .box_log {
+      margin: 3px;
+      padding: 2px;
+      border-color: #aaaaaa;
+      border-radius: 5px;
+      border-style: dotted;
+      background: #cccccc;
+    }
+    .box_log summary {
+      overflow: scroll;
+      white-space: wrap;
+    }
+    .box_log pre {
+      overflow-x: auto;
+    }
+  </style>
+
+  <script>
+    var content = [["2021-03-02 23:23:40", "DEBUG", "Knocking at ports [3689, 7000, 49152, 32498] on 10.10.1.9", "Knocking at ports [3689, 7000, 49152, 32498] on 10.10.1.9\n"], ["2021-03-02 23:23:40", "DEBUG", "Auto-discovered Woonkamer at 10.10.1.9:7000 (Protocol.AirPlay)", "Auto-discovered Woonkamer at 10.10.1.9:7000 (Protocol.AirPlay)\n"], ["2021-03-02 23:23:40", "DEBUG", "Auto-discovered Woonkamer at 10.10.1.9:49244 (Protocol.MRP)", "Auto-discovered Woonkamer at 10.10.1.9:49244 (Protocol.MRP)\n"], ["2021-03-02 23:23:40", "DEBUG", "Loaded AirPlay credentials: 92BB9CFD8CA43653:46F646EC37A9094057620DE2A9439CCEEAEEC0796BE33A77946E503F4A481A10", "Loaded AirPlay credentials: 92BB9CFD8CA43653:46F646EC37A9094057620DE2A9439CCEEAEEC0796BE33A77946E503F4A481A10\n"], ["2021-03-02 23:23:40", "DEBUG", "Connection made to device", "Connection made to device\n"], ["2021-03-02 23:23:40", "DEBUG", "Configured keep-alive on <asyncio.TransportSocket fd=39, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('10.10.0.33', 49966), raddr=('10.10.1.9', 49244)> (Linux)", "Configured keep-alive on <asyncio.TransportSocket fd=39, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('10.10.0.33', 49966), raddr=('10.10.1.9', 49244)> (Linux)\n"], ["2021-03-02 23:23:40", "DEBUG", "10.10.0.33:49966<->10.10.1.9:49244 Connection established", "10.10.0.33:49966<->10.10.1.9:49244 Connection established\n"], ["2021-03-02 23:23:40", "DEBUG", "10.10.0.33:49966<->10.10.1.9:49244 >> Send (Data=080f122438364643374434312d463439422d344341352d393933422d4232383841323333333834372000a20183010a2435666131383837632d353236632d343331382d616463632d633334613731663836396531120570796174761a066950686f6e6522063138413339332a12636f6d2e6170706c652e545652656d6f746532063334342e32383801406c480150016211636f6d2e6170706c652e54564d75736963680170017801880102a80101b00101)", "10.10.0.33:49966<->10.10.1.9:49244 >> Send (Data=080f122438364643374434312d463439422d344341352d393933422d4232383841323333333834372000a20183010a2435666131383837632d353236632d343331382d616463632d633334613731663836396531120570796174761a066950686f6e6522063138413339332a12636f6d2e6170706c652e545652656d6f746532063334342e32383801406c480150016211636f6d2e6170706c652e54564d75736963680170017801880102a80101b00101)\n"], ["2021-03-02 23:23:40", "DEBUG", "10.10.0.33:49966<->10.10.1.9:49244 >> Send: Protobuf: type: DEVICE_INFO_MESSAGE", "10.10.0.33:49966<->10.10.1.9:49244 >> Send: Protobuf: type: DEVICE_INFO_MESSAGE\nidentifier: \"86FC7D41-F49B-4CA5-993B-B288A2333847\"\nerrorCode: NoError\n[deviceInfoMessage] {\nuniqueIdentifier: \"5fa1887c-526c-4318-adcc-c34a71f869e1\"\nname: \"pyatv\"\nlocalizedModelName: \"iPhone\"\nsystemBuildVersion: \"18A393\"\napplicationBundleIdentifier: \"com.apple.TVRemote\"\napplicationBundleVersion: \"344.28\"\nprotocolVersion: 1\nlastSupportedMessageType: 108\nsupportsSystemPairing: true\nallowsPairing: true\nsystemMediaApplication: \"com.apple.TVMusic\"\nsupportsACL: true\nsupportsSharedQueue: true\nsupportsExtendedMotion: true\nsharedQueueVersion: 2\ndeviceClass: iPhone\nlogicalDeviceCount: 1\n}\n"], ["2021-03-02 23:23:40", "DEBUG", "10.10.0.33:49966<->10.10.1.9:49244 << Receive (Data=aa03080f122438364643374434312d463439422d344341352d393933422d4232383841323333333834372000a201d5020a2431343732334241372d373545442d344642352d383638302d4131343533393735373843431209576f6f6e6b616d65721a094170706c65c2a05456220631384b3830322a16636f6d2e6170706c652e6d6564696172656d6f7465643801406c480150016211636f6d2e6170706c652e54564d757369636801700178018201066c4a852621d98801029a012431343732334241372d373545442d344642352d383638302d413134353339373537384343a2011136633a34613a38353a32363a64393a6462a80104b00101c00100d20...)", "10.10.0.33:49966<->10.10.1.9:49244 << Receive (Data=aa03080f122438364643374434312d463439422d344341352d393933422d4232383841323333333834372000a201d5020a2431343732334241372d373545442d344642352d383638302d4131343533393735373843431209576f6f6e6b616d65721a094170706c65c2a05456220631384b3830322a16636f6d2e6170706c652e6d6564696172656d6f7465643801406c480150016211636f6d2e6170706c652e54564d757369636801700178018201066c4a852621d98801029a012431343732334241372d373545442d344642352d383638302d413134353339373537384343a2011136633a34613a38353a32363a64393a6462a80104b00101c00100d20...)\n"], ["2021-03-02 23:23:40", "DEBUG", "10.10.0.33:49966<->10.10.1.9:49244 << Receive: Protobuf: type: DEVICE_INFO_MESSAGE", "10.10.0.33:49966<->10.10.1.9:49244 << Receive: Protobuf: type: DEVICE_INFO_MESSAGE\nidentifier: \"86FC7D41-F49B-4CA5-993B-B288A2333847\"\nerrorCode: NoError\n[deviceInfoMessage] {\nuniqueIdentifier: \"14723BA7-75ED-4FB5-8680-A145397578CC\"\nname: \"Woonkamer\"\nlocalizedModelName: \"Apple\\302\\240TV\"\nsystemBuildVersion: \"18K802\"\napplicationBundleIdentifier: \"com.apple.mediaremoted\"\nprotocolVersion: 1\nlastSupportedMessageType: 108\nsupportsSystemPairing: true\nallowsPairing: true\nsystemMediaApplication: \"com.apple.TVMusic\"\nsupportsACL: true\nsupportsSharedQueue: true\nsupportsExtendedMotion: true\nbluetoothAddress: \"lJ\\205&!\\331\"\nsharedQueueVersion: 2\ndeviceUID: \"14723BA7-75ED-4FB5-8680-A145397578CC\"\nmanagedConfigDeviceID: \"6c:4a:85:26:d9:db\"\ndeviceClass: AppleTV\nlogicalDeviceCount: 1\nisProxyGroupPlayer: false\ngroupUID: \"57504D0D-38C3-4EE9-A409-EC5450A83AD4\"\nisGroupLeader: true\nisAirplayActive: false\nsystemPodcastApplication: \"com.apple.podcasts\"\nenderDefaultGroupUID: \"57504D0D-38C3-4EE9-A409-EC5450A83AD4\"\nairplayReceivers: \"TVAirPlay\"\nclusterType: 0\nisClusterAware: true\nmodelID: \"AppleTV6,2\"\n}\nuniqueIdentifier: \"BCC86DD3-ACB3-49CC-9369-1E8B93733A5F\"\n"], ["2021-03-02 23:23:40", "DEBUG", "10.10.0.33:49966<->10.10.1.9:49244 >> Send (Data=08222000ba022f0a250601010320b99fc28d33903c99621cfca995feb061180cc8e4c0b268e42b5f10cabf2ce43c1000180020002800)", "10.10.0.33:49966<->10.10.1.9:49244 >> Send (Data=08222000ba022f0a250601010320b99fc28d33903c99621cfca995feb061180cc8e4c0b268e42b5f10cabf2ce43c1000180020002800)\n"], ["2021-03-02 23:23:40", "DEBUG", "10.10.0.33:49966<->10.10.1.9:49244 >> Send: Protobuf: type: CRYPTO_PAIRING_MESSAGE", "10.10.0.33:49966<->10.10.1.9:49244 >> Send: Protobuf: type: CRYPTO_PAIRING_MESSAGE\nerrorCode: NoError\n[cryptoPairingMessage] {\npairingData: \"\\006\\001\\001\\003 \\271\\237\\302\\2153\\220<\\231b\\034\\374\\251\\225\\376\\260a\\030\\014\\310\\344\\300\\262h\\344+_\\020\\312\\277,\\344<\"\nstatus: 0\nisRetrying: false\nisUsingSystemPairing: false\nstate: 0\n}\n"], ["2021-03-02 23:23:40", "DEBUG", "10.10.0.33:49966<->10.10.1.9:49244 << Receive (Data=d90108222000ba02aa010a9f01057841eb1fad8c1a2f4615be1e49c3a1fed2b22a89206d7122803f6d0df948244a6d45563a5aaf6526648df58c20af8435cd0baea73ab2c3bb7a89875456cda506e71e2bf68c36578f36247a2e862f98f029a2dfdbedaa9766eceb11e6c264e4c0f0f65da5e25ae0a77f555d610669a30172f1150706754fbdec0601020320c8e839ffa87ec878bc44fa55f94283dad2484d0a3e4cbcec1df9d1adda6277731000180020002800aa052446354632423433462d383545382d343230462d413835452d323441413144323432413636)", "10.10.0.33:49966<->10.10.1.9:49244 << Receive (Data=d90108222000ba02aa010a9f01057841eb1fad8c1a2f4615be1e49c3a1fed2b22a89206d7122803f6d0df948244a6d45563a5aaf6526648df58c20af8435cd0baea73ab2c3bb7a89875456cda506e71e2bf68c36578f36247a2e862f98f029a2dfdbedaa9766eceb11e6c264e4c0f0f65da5e25ae0a77f555d610669a30172f1150706754fbdec0601020320c8e839ffa87ec878bc44fa55f94283dad2484d0a3e4cbcec1df9d1adda6277731000180020002800aa052446354632423433462d383545382d343230462d413835452d323441413144323432413636)\n"], ["2021-03-02 23:23:40", "DEBUG", "10.10.0.33:49966<->10.10.1.9:49244 << Receive: Protobuf: type: CRYPTO_PAIRING_MESSAGE", "10.10.0.33:49966<->10.10.1.9:49244 << Receive: Protobuf: type: CRYPTO_PAIRING_MESSAGE\nerrorCode: NoError\n[cryptoPairingMessage] {\npairingData: \"\\005xA\\353\\037\\255\\214\\032/F\\025\\276\\036I\\303\\241\\376\\322\\262*\\211 mq\\\"\\200?m\\r\\371H$JmEV:Z\\257e&d\\215\\365\\214 \\257\\2045\\315\\013\\25...\nstatus: 0\nisRetrying: false\nisUsingSystemPairing: false\nstate: 0\n}\nuniqueIdentifier: \"F5F2B43F-85E8-420F-A85E-24AA1D242A66\"\n"], ["2021-03-02 23:23:40", "DEBUG", "Device (Encrypted=41eb1fad8c1a2f4615be1e49c3a1fed2b22a89206d7122803f6d0df948244a6d45563a5aaf6526648df58c20af8435cd0baea73ab2c3bb7a89875456cda506e71e2bf68c36578f36247a2e862f98f029a2dfdbedaa9766eceb11e6c264e4c0f0f65da5e25ae0a77f555d610669a30172f1150706754fbdec, Public=cee7c5a7471183819b71c56d770446279d02ebd0530e0a4ebaae657ae3d2175f)", "Device (Encrypted=41eb1fad8c1a2f4615be1e49c3a1fed2b22a89206d7122803f6d0df948244a6d45563a5aaf6526648df58c20af8435cd0baea73ab2c3bb7a89875456cda506e71e2bf68c36578f36247a2e862f98f029a2dfdbedaa9766eceb11e6c264e4c0f0f65da5e25ae0a77f555d610669a30172f1150706754fbdec, Public=cee7c5a7471183819b71c56d770446279d02ebd0530e0a4ebaae657ae3d2175f)\n"], ["2021-03-02 23:23:40", "DEBUG", "10.10.0.33:49966<->10.10.1.9:49244 >> Send (Data=08222000ba0287010a7d06010305788e6bbfd9167f16be03d577a813a1b8f4ecee6c71caebece0a1d766d65a17a6b82944bd9d88a1512a63712039348fbcfd8abfc3f09969f0d87acbaef75e4762743555e7a290579c837da306b3d3404dfcd18237aebb7a4045b25f0dfa9c560bb6b6c8aa7c99b8c0c68ce707e6f0c2cd6fe0a60683e3fd91441000180020002800)", "10.10.0.33:49966<->10.10.1.9:49244 >> Send (Data=08222000ba0287010a7d06010305788e6bbfd9167f16be03d577a813a1b8f4ecee6c71caebece0a1d766d65a17a6b82944bd9d88a1512a63712039348fbcfd8abfc3f09969f0d87acbaef75e4762743555e7a290579c837da306b3d3404dfcd18237aebb7a4045b25f0dfa9c560bb6b6c8aa7c99b8c0c68ce707e6f0c2cd6fe0a60683e3fd91441000180020002800)\n"], ["2021-03-02 23:23:40", "DEBUG", "10.10.0.33:49966<->10.10.1.9:49244 >> Send: Protobuf: type: CRYPTO_PAIRING_MESSAGE", "10.10.0.33:49966<->10.10.1.9:49244 >> Send: Protobuf: type: CRYPTO_PAIRING_MESSAGE\nerrorCode: NoError\n[cryptoPairingMessage] {\npairingData: \"\\006\\001\\003\\005x\\216k\\277\\331\\026\\177\\026\\276\\003\\325w\\250\\023\\241\\270\\364\\354\\356lq\\312\\353\\354\\340\\241\\327f\\326Z\\027\\246\\270)D\\2...\nstatus: 0\nisRetrying: false\nisUsingSystemPairing: false\nstate: 0\n}\n"], ["2021-03-02 23:23:40", "DEBUG", "10.10.0.33:49966<->10.10.1.9:49244 << Receive (Data=3e08222000ba02100a060701020601041000180020002800aa052434464446334235362d333734452d344131302d394644352d323537363844304145363339)", "10.10.0.33:49966<->10.10.1.9:49244 << Receive (Data=3e08222000ba02100a060701020601041000180020002800aa052434464446334235362d333734452d344131302d394644352d323537363844304145363339)\n"], ["2021-03-02 23:23:40", "DEBUG", "10.10.0.33:49966<->10.10.1.9:49244 << Receive: Protobuf: type: CRYPTO_PAIRING_MESSAGE", "10.10.0.33:49966<->10.10.1.9:49244 << Receive: Protobuf: type: CRYPTO_PAIRING_MESSAGE\nerrorCode: NoError\n[cryptoPairingMessage] {\npairingData: \"\\007\\001\\002\\006\\001\\004\"\nstatus: 0\nisRetrying: false\nisUsingSystemPairing: false\nstate: 0\n}\nuniqueIdentifier: \"4FDF3B56-374E-4A10-9FD5-25768D0AE639\"\n"], ["2021-03-02 23:23:40", "DEBUG", "Keys (Input=d8bb7f76831ed6a4ed3256a7be559b704ac4b154485a21845dda7dc4fc9c1c7c, Output=49565c2b0b2dd55bdc863974d5e99f5c10212a5d798d2ffda9ae9b805704ed86)", "Keys (Input=d8bb7f76831ed6a4ed3256a7be559b704ac4b154485a21845dda7dc4fc9c1c7c, Output=49565c2b0b2dd55bdc863974d5e99f5c10212a5d798d2ffda9ae9b805704ed86)\n"], ["2021-03-02 23:23:40", "DEBUG", "10.10.0.33:49966<->10.10.1.9:49244 >> Send (Data=08262000d202020802)", "10.10.0.33:49966<->10.10.1.9:49244 >> Send (Data=08262000d202020802)\n"], ["2021-03-02 23:23:40", "DEBUG", "10.10.0.33:49966<->10.10.1.9:49244 >> Send (Encrypted=d9bb16403539597304a4d0f1d7eee1952d6ce793dc229ef395)", "10.10.0.33:49966<->10.10.1.9:49244 >> Send (Encrypted=d9bb16403539597304a4d0f1d7eee1952d6ce793dc229ef395)\n"], ["2021-03-02 23:23:40", "DEBUG", "10.10.0.33:49966<->10.10.1.9:49244 >> Send: Protobuf: type: SET_CONNECTION_STATE_MESSAGE", "10.10.0.33:49966<->10.10.1.9:49244 >> Send: Protobuf: type: SET_CONNECTION_STATE_MESSAGE\nerrorCode: NoError\n[setConnectionStateMessage] {\nstate: Connected\n}\n"], ["2021-03-02 23:23:40", "DEBUG", "10.10.0.33:49966<->10.10.1.9:49244 >> Send (Data=0810122443383234393230462d343131392d343036442d394230352d3643304236314343393544312000aa010a08011000180120012800)", "10.10.0.33:49966<->10.10.1.9:49244 >> Send (Data=0810122443383234393230462d343131392d343036442d394230352d3643304236314343393544312000aa010a08011000180120012800)\n"], ["2021-03-02 23:23:40", "DEBUG", "10.10.0.33:49966<->10.10.1.9:49244 >> Send (Encrypted=bbbe113a50c8e3e2325e5c4c77a172b389127cbb51329bbd94c6c7c697b92c75a5fb23da7b1ddcd46b36504508876ff6891bbfbb678fc91f75913a67a043779874cbb6819d6efc)", "10.10.0.33:49966<->10.10.1.9:49244 >> Send (Encrypted=bbbe113a50c8e3e2325e5c4c77a172b389127cbb51329bbd94c6c7c697b92c75a5fb23da7b1ddcd46b36504508876ff6891bbfbb678fc91f75913a67a043779874cbb6819d6efc)\n"], ["2021-03-02 23:23:40", "DEBUG", "10.10.0.33:49966<->10.10.1.9:49244 >> Send: Protobuf: type: CLIENT_UPDATES_CONFIG_MESSAGE", "10.10.0.33:49966<->10.10.1.9:49244 >> Send: Protobuf: type: CLIENT_UPDATES_CONFIG_MESSAGE\nidentifier: \"C824920F-4119-406D-9B05-6C0B61CC95D1\"\nerrorCode: NoError\n[clientUpdatesConfigMessage] {\nartworkUpdates: true\nnowPlayingUpdates: false\nvolumeUpdates: true\nkeyboardUpdates: true\noutputDeviceUpdates: false\n}\n"], ["2021-03-02 23:23:40", "DEBUG", "10.10.0.33:49966<->10.10.1.9:49244 Received EOF from server", "10.10.0.33:49966<->10.10.1.9:49244 Received EOF from server\n"], ["2021-03-02 23:23:40", "DEBUG", "10.10.0.33:49966<->10.10.1.9:49244 Disconnected from device: None", "10.10.0.33:49966<->10.10.1.9:49244 Disconnected from device: None\n"], ["2021-03-02 23:23:40", "WARNING", "There were 1 outstanding requests", "There were 1 outstanding requests\n"], ["2021-03-02 23:23:40", "DEBUG", "10.10.0.33:49966<->10.10.1.9:49244 Closing connection", "10.10.0.33:49966<->10.10.1.9:49244 Closing connection\n"], ["2021-03-02 23:23:45", "ERROR", "Failed to connect", "Failed to connect\nTraceback (most recent call last):\nFile \"/usr/local/lib/python3.8/site-packages/pyatv/mrp/protocol.py\", line 177, in _receive\nawait asyncio.wait_for(semaphore.acquire(), timeout)\nFile \"/usr/local/lib/python3.8/asyncio/tasks.py\", line 501, in wait_for\nraise exceptions.TimeoutError()\nasyncio.exceptions.TimeoutError\nDuring handling of the above exception, another exception occurred:\nTraceback (most recent call last):\nFile \"/usr/src/homeassistant/homeassistant/components/apple_tv/__init__.py\", line 242, in _connect_loop\nawait self._connect(conf)\nFile \"/usr/src/homeassistant/homeassistant/components/apple_tv/__init__.py\", line 326, in _connect\nself.atv = await connect(conf, self.hass.loop, session=session)\nFile \"/usr/local/lib/python3.8/site-packages/pyatv/__init__.py\", line 76, in connect\nawait atv.connect()\nFile \"/usr/local/lib/python3.8/site-packages/pyatv/mrp/__init__.py\", line 701, in connect\nawait self._protocol.start()\nFile \"/usr/local/lib/python3.8/site-packages/pyatv/mrp/protocol.py\", line 107, in start\nawait self.send_and_receive(messages.client_updates_config())\nFile \"/usr/local/lib/python3.8/site-packages/pyatv/mrp/protocol.py\", line 169, in send_and_receive\nreturn await self._receive(identifier, timeout)\nFile \"/usr/local/lib/python3.8/site-packages/pyatv/mrp/protocol.py\", line 180, in _receive\ndel self._outstanding[identifier]\nKeyError: 'C824920F-4119-406D-9B05-6C0B61CC95D1'\n"]];
+    var level_checkboxes = [];
+
+    function createEntry(entry) {
+      var show_date = document.getElementById("show_date").checked;
+      var outer = document.createElement("div");
+      outer.className = "box_log";
+
+      var details = document.createElement("details");
+      outer.appendChild(details);
+
+      var summary = document.createElement("summary");
+      summary.innerText = (show_date ? entry[0] + " " : "") + entry[2];
+      details.appendChild(summary);
+
+      var desc = document.createElement("pre");
+      details.appendChild(desc);
+
+      details.addEventListener("toggle", event => {
+        if (details.open) {
+          desc.innerText = entry[3];
+
+        }
+      });
+
+      return outer;
+    }
+
+    function populate() {
+      include_filter = document.getElementById("include_filter").value;
+      exclude_filter = document.getElementById("exclude_filter").value;
+
+      entries = document.getElementById("entries")
+      entries.innerHTML = "";
+
+      active_levels = new Set();
+      for (const checkbox of level_checkboxes) {
+        if (checkbox.checked) {
+          active_levels.add(checkbox.value);
+        }
+      }
+
+      include_regexp = new RegExp(include_filter, "i");
+      exclude_regexp = new RegExp(exclude_filter, "i");
+      for (const entry of content) {
+        if (exclude_filter && exclude_regexp.test(entry[3])) {
+          continue;
+        }
+
+        if ((include_filter == null || include_regexp.test(entry[3])) &&
+            active_levels.has(entry[1])) {
+          entries.appendChild(createEntry(entry));
+        }
+      }
+    }
+
+    function loadData() {
+      var log_levels = new Set();
+
+      for (const entry of content) {
+        log_levels.add(entry[1]);
+      }
+
+      for (const level of log_levels) {
+        var outer = document.createElement("div");
+        outer.style = "display: inline";
+
+        var filter_box = document.createElement("input");
+        filter_box.type = "checkbox";
+        filter_box.value = level;
+        filter_box.id = "LEVEL_" + level;
+        filter_box.value = level;
+        filter_box.checked = true;
+        filter_box.addEventListener('change', (event) => {
+          populate();
+        });
+
+        outer.appendChild(filter_box);
+        level_checkboxes.push(filter_box);
+
+        var label = document.createElement("label");
+        label.innerText = level;
+        label.for = "LEVEL_" + level;
+        outer.appendChild(label);
+
+        document.getElementById("filters").appendChild(outer);
+      }
+
+      populate();
+    }
+
+    // onload does not seem to work nicely with htmlpreview, so this is a workaround
+    var checkExist = setInterval(function() {
+      if (document.getElementById("entries")) {
+        loadData();
+        clearInterval(checkExist);
+      }
+    }, 100);
+  </script>
+
+</head>
+<body>
+  <h1>pyatv log2html</h1>
+  <div>
+    Generated at 2021-03-03 06:02:51.228097<br />
+    Command: /opt/hostedtoolcache/Python/3.9.1/x64/bin/atvlog --output ccdd7c22-a730-4cfe-a4e8-63c5da3f82d6.html --format markdown body
+  </div>
+  <div id="filters" style="display: inline">
+    <div>
+      <label for="include_filter">Include</label>
+      <input type="text" id="include_filter" onkeyup="populate()"
+             placeholder="Include regexp..." />
+    </div>
+    <div>
+      <label for="exclude_filter">Exclude</label>
+      <input type="text" id="exclude_filter" onkeyup="populate()"
+             placeholder="Exclude regexp..." />
+    </div>
+    <div>
+      <input type="checkbox" id="show_date" onclick="populate()" checked />
+      <label for="show_date">Show date</label>
+    </div>
+  </div>
+  <div id="entries" />
+</body>
