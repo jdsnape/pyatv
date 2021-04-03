@@ -1,0 +1,148 @@
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>pyatv log</title>
+  <style type="text/css" media="screen">
+    .box_log {
+      margin: 3px;
+      padding: 2px;
+      border-color: #aaaaaa;
+      border-radius: 5px;
+      border-style: dotted;
+      background: #cccccc;
+    }
+    .box_log summary {
+      overflow: scroll;
+      white-space: wrap;
+    }
+    .box_log pre {
+      overflow-x: auto;
+    }
+  </style>
+
+  <script>
+    var content = [["2021-04-03 13:00:15", "INFO", "Logged in and got session id 232771202", "Logged in and got session id 232771202\n"], ["2021-04-03 13:00:15", "DEBUG", "Playstatus error occurred: failed to login: 406", "Playstatus error occurred: failed to login: 406\n"], ["2021-04-03 13:00:15", "DEBUG", "Waiting for playstatus updates", "Waiting for playstatus updates\n"], ["2021-04-03 13:00:15", "DEBUG", "Already logged in, re-using seasion id 232771202", "Already logged in, re-using seasion id 232771202\n"], ["2021-04-03 13:00:15", "DEBUG", "GET URL: http://192.168.100.28:3689/ctrl-int/1/playstatusupdate?session-id=232771202&revision-number=214", "GET URL: http://192.168.100.28:3689/ctrl-int/1/playstatusupdate?session-id=232771202&revision-number=214\n"], ["2021-04-03 13:00:15", "WARNING", "A <class 'pyatv.exceptions.AuthenticationError'> error occurred: failed to login: 406", "A <class 'pyatv.exceptions.AuthenticationError'> error occurred: failed to login: 406\n"], ["2021-04-03 13:00:15", "DEBUG", "Response: status=403, headers=[Date=Sat, 03 Apr 2021 10:48:50 GMT, DAAP-Server=iTunes/11.1b37 (OS X), Content-Type=application/x-dmap-tagged, Content-Length=0]", "Response: status=403, headers=[Date=Sat, 03 Apr 2021 10:48:50 GMT, DAAP-Server=iTunes/11.1b37 (OS X), Content-Type=application/x-dmap-tagged, Content-Length=0]\n"], ["2021-04-03 13:00:15", "DEBUG", "<< GET (Data=)", "<< GET (Data=)\n2021-04-03 13:00:15 DEBUG (MainThread) [pyatv.dmap.daap]\n"], ["2021-04-03 13:00:15", "INFO", "implicitly logged out, logging in again", "implicitly logged out, logging in again\n"], ["2021-04-03 13:00:15", "DEBUG", "GET URL: http://192.168.100.28:3689/login?pairing-guid=0x4A5861992AC66A69&hasFP=1", "GET URL: http://192.168.100.28:3689/login?pairing-guid=0x4A5861992AC66A69&hasFP=1\n"], ["2021-04-03 13:00:15", "DEBUG", "Response: status=200, headers=[Date=Sat, 03 Apr 2021 10:48:50 GMT, DAAP-Server=iTunes/11.1b37 (OS X), Content-Type=application/x-dmap-tagged, Content-Length=47, Content-Encoding=gzip]", "Response: status=200, headers=[Date=Sat, 03 Apr 2021 10:48:50 GMT, DAAP-Server=iTunes/11.1b37 (OS X), Content-Type=application/x-dmap-tagged, Content-Length=47, Content-Encoding=gzip]\n"], ["2021-04-03 13:00:15", "DEBUG", "<< GET (Data=6d6c6f67000000186d73747400000004000000c86d6c69640000000472aa6ea3)", "<< GET (Data=6d6c6f67000000186d73747400000004000000c86d6c69640000000472aa6ea3)\n"], ["2021-04-03 13:00:15", "DEBUG", "mlog: [container, dmap.loginresponse]", "mlog: [container, dmap.loginresponse]\n  mstt: 200 [uint, dmap.status]\n  mlid: 1923772067 [uint, dmap.sessionid]\n\n"], ["2021-04-03 13:00:15", "INFO", "Logged in and got session id 1923772067", "Logged in and got session id 1923772067\n"], ["2021-04-03 13:00:15", "DEBUG", "GET URL: http://192.168.100.28:3689/ctrl-int/1/playstatusupdate?session-id=1923772067&revision-number=214", "GET URL: http://192.168.100.28:3689/ctrl-int/1/playstatusupdate?session-id=1923772067&revision-number=214\n"], ["2021-04-03 13:00:15", "DEBUG", "Response: status=403, headers=[Date=Sat, 03 Apr 2021 10:48:50 GMT, DAAP-Server=iTunes/11.1b37 (OS X), Content-Type=application/x-dmap-tagged, Content-Length=0]", "Response: status=403, headers=[Date=Sat, 03 Apr 2021 10:48:50 GMT, DAAP-Server=iTunes/11.1b37 (OS X), Content-Type=application/x-dmap-tagged, Content-Length=0]\n"], ["2021-04-03 13:00:15", "DEBUG", "<< GET (Data=)", "<< GET (Data=)\n2021-04-03 13:00:15 DEBUG (MainThread) [pyatv.dmap.daap]\n"], ["2021-04-03 13:00:15", "INFO", "implicitly logged out, logging in again", "implicitly logged out, logging in again\n"], ["2021-04-03 13:00:15", "DEBUG", "GET URL: http://192.168.100.28:3689/login?pairing-guid=0x4A5861992AC66A69&hasFP=1", "GET URL: http://192.168.100.28:3689/login?pairing-guid=0x4A5861992AC66A69&hasFP=1\n"], ["2021-04-03 13:00:15", "DEBUG", "Response: status=200, headers=[Date=Sat, 03 Apr 2021 10:48:50 GMT, DAAP-Server=iTunes/11.1b37 (OS X), Content-Type=application/x-dmap-tagged, Content-Length=47, Content-Encoding=gzip]", "Response: status=200, headers=[Date=Sat, 03 Apr 2021 10:48:50 GMT, DAAP-Server=iTunes/11.1b37 (OS X), Content-Type=application/x-dmap-tagged, Content-Length=47, Content-Encoding=gzip]\n"], ["2021-04-03 13:00:15", "DEBUG", "<< GET (Data=6d6c6f67000000186d73747400000004000000c86d6c6964000000046ce97f80)", "<< GET (Data=6d6c6f67000000186d73747400000004000000c86d6c6964000000046ce97f80)\n"], ["2021-04-03 13:00:15", "DEBUG", "mlog: [container, dmap.loginresponse]", "mlog: [container, dmap.loginresponse]\n  mstt: 200 [uint, dmap.status]\n  mlid: 1827241856 [uint, dmap.sessionid]\n\n"], ["2021-04-03 13:00:15", "INFO", "Logged in and got session id 1827241856", "Logged in and got session id 1827241856\n"], ["2021-04-03 13:00:15", "DEBUG", "Playstatus error occurred: failed to login: 403", "Playstatus error occurred: failed to login: 403\n"], ["2021-04-03 13:00:15", "DEBUG", "Waiting for playstatus updates", "Waiting for playstatus updates\n"], ["2021-04-03 13:00:15", "DEBUG", "Already logged in, re-using seasion id 1827241856", "Already logged in, re-using seasion id 1827241856\n"], ["2021-04-03 13:00:15", "DEBUG", "GET URL: http://192.168.100.28:3689/ctrl-int/1/playstatusupdate?session-id=1827241856&revision-number=214", "GET URL: http://192.168.100.28:3689/ctrl-int/1/playstatusupdate?session-id=1827241856&revision-number=214\n"], ["2021-04-03 13:00:15", "WARNING", "A <class 'pyatv.exceptions.AuthenticationError'> error occurred: failed to login: 403", "A <class 'pyatv.exceptions.AuthenticationError'> error occurred: failed to login: 403\n"], ["2021-04-03 13:00:15", "DEBUG", "Response: status=403, headers=[Date=Sat, 03 Apr 2021 10:48:50 GMT, DAAP-Server=iTunes/11.1b37 (OS X), Content-Type=application/x-dmap-tagged, Content-Length=0]", "Response: status=403, headers=[Date=Sat, 03 Apr 2021 10:48:50 GMT, DAAP-Server=iTunes/11.1b37 (OS X), Content-Type=application/x-dmap-tagged, Content-Length=0]\n"], ["2021-04-03 13:00:15", "DEBUG", "<< GET (Data=)", "<< GET (Data=)\n2021-04-03 13:00:15 DEBUG (MainThread) [pyatv.dmap.daap]\n"], ["2021-04-03 13:00:15", "INFO", "implicitly logged out, logging in again", "implicitly logged out, logging in again\n"], ["2021-04-03 13:00:15", "DEBUG", "GET URL: http://192.168.100.28:3689/login?pairing-guid=0x4A5861992AC66A69&hasFP=1", "GET URL: http://192.168.100.28:3689/login?pairing-guid=0x4A5861992AC66A69&hasFP=1\n"], ["2021-04-03 13:00:15", "DEBUG", "Response: status=200, headers=[Date=Sat, 03 Apr 2021 10:48:50 GMT, DAAP-Server=iTunes/11.1b37 (OS X), Content-Type=application/x-dmap-tagged, Content-Length=47, Content-Encoding=gzip]", "Response: status=200, headers=[Date=Sat, 03 Apr 2021 10:48:50 GMT, DAAP-Server=iTunes/11.1b37 (OS X), Content-Type=application/x-dmap-tagged, Content-Length=47, Content-Encoding=gzip]\n"], ["2021-04-03 13:00:15", "DEBUG", "<< GET (Data=6d6c6f67000000186d73747400000004000000c86d6c69640000000407f4b112)", "<< GET (Data=6d6c6f67000000186d73747400000004000000c86d6c69640000000407f4b112)\n"], ["2021-04-03 13:00:15", "DEBUG", "mlog: [container, dmap.loginresponse]", "mlog: [container, dmap.loginresponse]\n  mstt: 200 [uint, dmap.status]\n  mlid: 133476626 [uint, dmap.sessionid]\n"]];
+    var level_checkboxes = [];
+
+    function createEntry(entry) {
+      var show_date = document.getElementById("show_date").checked;
+      var outer = document.createElement("div");
+      outer.className = "box_log";
+
+      var details = document.createElement("details");
+      outer.appendChild(details);
+
+      var summary = document.createElement("summary");
+      summary.innerText = (show_date ? entry[0] + " " : "") + entry[2];
+      details.appendChild(summary);
+
+      var desc = document.createElement("pre");
+      details.appendChild(desc);
+
+      details.addEventListener("toggle", event => {
+        if (details.open) {
+          desc.innerText = entry[3];
+
+        }
+      });
+
+      return outer;
+    }
+
+    function populate() {
+      include_filter = document.getElementById("include_filter").value;
+      exclude_filter = document.getElementById("exclude_filter").value;
+
+      entries = document.getElementById("entries")
+      entries.innerHTML = "";
+
+      active_levels = new Set();
+      for (const checkbox of level_checkboxes) {
+        if (checkbox.checked) {
+          active_levels.add(checkbox.value);
+        }
+      }
+
+      include_regexp = new RegExp(include_filter, "i");
+      exclude_regexp = new RegExp(exclude_filter, "i");
+      for (const entry of content) {
+        if (exclude_filter && exclude_regexp.test(entry[3])) {
+          continue;
+        }
+
+        if ((include_filter == null || include_regexp.test(entry[3])) &&
+            active_levels.has(entry[1])) {
+          entries.appendChild(createEntry(entry));
+        }
+      }
+    }
+
+    function loadData() {
+      var log_levels = new Set();
+
+      for (const entry of content) {
+        log_levels.add(entry[1]);
+      }
+
+      for (const level of log_levels) {
+        var outer = document.createElement("div");
+        outer.style = "display: inline";
+
+        var filter_box = document.createElement("input");
+        filter_box.type = "checkbox";
+        filter_box.value = level;
+        filter_box.id = "LEVEL_" + level;
+        filter_box.value = level;
+        filter_box.checked = true;
+        filter_box.addEventListener('change', (event) => {
+          populate();
+        });
+
+        outer.appendChild(filter_box);
+        level_checkboxes.push(filter_box);
+
+        var label = document.createElement("label");
+        label.innerText = level;
+        label.for = "LEVEL_" + level;
+        outer.appendChild(label);
+
+        document.getElementById("filters").appendChild(outer);
+      }
+
+      populate();
+    }
+
+    // onload does not seem to work nicely with htmlpreview, so this is a workaround
+    var checkExist = setInterval(function() {
+      if (document.getElementById("entries")) {
+        loadData();
+        clearInterval(checkExist);
+      }
+    }, 100);
+  </script>
+
+</head>
+<body>
+  <h1>pyatv log2html</h1>
+  <div>
+    Generated at 2021-04-03 11:00:54.459001<br />
+    Command: /opt/hostedtoolcache/Python/3.9.2/x64/bin/atvlog --output b664cbb3-119b-4a07-80f2-2a8accbf9dca.html --format markdown body
+  </div>
+  <div id="filters" style="display: inline">
+    <div>
+      <label for="include_filter">Include</label>
+      <input type="text" id="include_filter" onkeyup="populate()"
+             placeholder="Include regexp..." />
+    </div>
+    <div>
+      <label for="exclude_filter">Exclude</label>
+      <input type="text" id="exclude_filter" onkeyup="populate()"
+             placeholder="Exclude regexp..." />
+    </div>
+    <div>
+      <input type="checkbox" id="show_date" onclick="populate()" checked />
+      <label for="show_date">Show date</label>
+    </div>
+  </div>
+  <div id="entries" />
+</body>
