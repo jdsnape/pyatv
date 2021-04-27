@@ -3,10 +3,12 @@ import asyncio
 import logging
 from enum import Enum
 from collections import deque
+import socket
 from typing import Optional, Tuple
 
 from pyatv import exceptions
 from pyatv.support import chacha20, log_binary
+from pyatv.companion import opack
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -52,6 +54,8 @@ class CompanionConnection(asyncio.Protocol):
         self._buffer: bytes = b""
         self._chacha: Optional[chacha20.Chacha20Cipher] = None
         self._queue: deque = deque()
+        self._async_queue = deque()
+        self.message_received = asyncio.Event()
 
     @property
     def connected(self) -> bool:
@@ -61,6 +65,15 @@ class CompanionConnection(asyncio.Protocol):
     async def connect(self) -> None:
         """Connect to device."""
         await self.loop.create_connection(lambda: self, self.host, self.port)
+        # Set TCP keepalive so the connection doesn't get closed
+        self.transport.get_extra_info('socket').setsockopt(
+            socket.SOL_SOCKET, socket.SO_KEEPALIVE, 1)
+        self.transport.get_extra_info('socket').setsockopt(
+            socket.IPPROTO_TCP, socket.TCP_KEEPIDLE, 1)
+        self.transport.get_extra_info('socket').setsockopt(
+            socket.IPPROTO_TCP, socket.TCP_KEEPINTVL, 1)
+        self.transport.get_extra_info('socket').setsockopt(
+            socket.IPPROTO_TCP, socket.TCP_KEEPCNT, 5)
 
     def close(self) -> None:
         """Close connection to device."""
@@ -129,6 +142,25 @@ class CompanionConnection(asyncio.Protocol):
 
         self.transport.write(header + data)
 
+    async def listen(self):
+        while True:
+            # This could just be waiting on the queue? Not sure if that blocks
+            await self.message_received.wait()
+            while self._async_queue:
+                response = self._async_queue.popleft()
+                _LOGGER.info(f"Processing {len(response)} encrypted bytes")
+                header, data = response[0:4], response[4:]
+                if self._chacha:
+                    data = self._chacha.decrypt(data, aad=header)
+                    log_binary(_LOGGER, "Receive msg", Header=header, Decrypted=data)
+                    # TODO check it's actually OPACK here
+                    unpacked_object, _ = opack.unpack(data)
+                    _LOGGER.debug("Receive OPACK: %s", unpacked_object)
+                else:
+                    _LOGGER.error("Received data but no encryption established")
+
+            self.message_received.clear()
+
     def connection_made(self, transport):
         """Handle that connection was eatablished."""
         _LOGGER.debug("Connected to companion device")
@@ -156,7 +188,9 @@ class CompanionConnection(asyncio.Protocol):
             receiver[0] = data
             receiver[3].release()
         else:
-            log_binary(_LOGGER, "Received data with not receiver", Data=data)
+            self._async_queue.append(data)
+            self.message_received.set()
+            log_binary(_LOGGER, "Received asynchronous message", Data=data)
 
     @staticmethod
     def error_received(exc):
